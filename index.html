@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .header {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .head {
+        height:60px;
+        width: 100%;
+        background-color:black;
+        position: fixed;
+        display: grid;
+        grid-template-columns: 15% 30% 40% 15%;
+        align-items: center;
+        justify-items: center;
+        z-index:9;
+    }
+
+    .logo {
+        height: 60px;
+        width: 80px;
+    }
+
+    .option2 {
+        display: none;
+
+    }
+  
+    .option1 {
+        display: grid;
+        height: 70px;
+        width: 55%;
+        grid-template-columns: 33% 33% 33%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    @media screen and (max-width:800px) {
+        .option2 {
+            display: block;
+            
+            
+        }
+
+        .option1 {
+            display: none;
+        }
+
+    }
+
+    @media screen and (min-width:800px) {
+        .option2 {
+            display: none;
+
+        }
+
+        .option1 {
+            display: grid;
+        }
+
+    }
+
+    @media screen and (min-width:1370px)and (max-width:1600px) {
+        .complain-section {
+            height: 230vh;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            align-items: center;
+            justify-items: center;
+
+        }
+        
+        button{
+            height:80px;
+            width:130px;
+            background-color: aqua;
+        }
+        #text{
+            font-size:80px;
+        }
+        .text-section{
+            height:100vh;
+        }        
+    }
+
+    @media screen and (min-width:1200px) and (max-width:1370px) {
+        .complain-section {
+            height: 330vh;
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            align-items: center;
+            justify-items: center;
+
+        }
+        
+        #text{
+            font-size:60px;
+        }
+        .text-section{
+            height:75vh;
+        }  
+    }
+
+    @media screen and (min-width:700px) and (max-width:1200px) {
+        .complain-section {
+            height: 460vh;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+            justify-items: center;
+
+        }
+       
+        .option2{
+            margin-right:-50px;
+        }
+        #text{
+            font-size:40px;
+        }
+        .text-section{
+            height:50vh;
+        }  
+    }
+
+    @media screen and (max-width:700px) {
+        .complain-section {
+            height: 900vh;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+
+        }
+        .complain{
+            margin-right:50px;
+        }
+        .option2{
+            margin-right:-10px;
+        }
+        
+        #text{
+            font-size:30px;
+            margin-top:120px;
+        }
+        .text-section{
+            height:25vh;
+        }  
+    }
+
+    .font-view-video {
+
+        width: 100%;
+        overflow-x: hidden;
+    
+
+
+    }
+
+    .complain {
+        height: 360px;
+        width: 330px;
+        background-color: darkorchid;
+        margin: 30px 30px;
+        display: grid;
+        border-radius: 10px;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 3px 2px rgb(26, 213, 85);
+    }
+    .complain-section{
+       background-color:black;
+    }
+    .complain-img {
+        height: 250px;
+        width: 250px;
+        border-radius: 20px;
+        
+    }
+    .complain-button{
+        display: none;
+        position: sticky;
+        height:50px;
+        width:150px;
+        border-radius: 15px;
+    }
+  .complain:hover .complain-button{
+    display: block;
+    background-color: aqua;
+  }
+  .complain:hover{
+    transform: scale(0.85);
+    box-shadow: 3px 2px rgb(76, 174, 212);
+  }
+ li{
+    position:absolute;
+    display: none;
+    width:160px;
+    
+    background-color: rgb(37, 173, 164);
+ }
+ a{
+    font-size:20px;
+   border-style:none;
+ }
+ ul{
+    height:40px;
+    margin:5px 2px;
+    background-color:greenyellow;
+ }
+.text-section{
+
+    width:100%;
+    aspect-ratio:2/3;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+}
+.animation-1{
+    height:5px;
+    
+    background-color: rgb(235, 41, 239);
+   
+}
+#text{
+    
+     color:chartreuse;
+}
+.conclution-section{
+    height:100vh;
+    width:100%;
+    background-color:black;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+}
+.show-all-complain{
+    height:50px;
+    width:200px;
+    background-color:white;
+    border-radius: 15px;
+    border:2px solid rgb(67, 67, 231);
+    color:chartreuse;
+    font-size:18px;
+}
+.show-all-complain:hover{
+    cursor: pointer;
+    color:white;
+    background-color: rgb(128, 229, 229);
+    
+}
+.conclution-header{
+    height:80px;
+    border-radius: 5px;
+    background-color: gold;
+    color:white;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.conclution-result,.conclution-solve{
+    background-color:black;
+    color:white;
+    font-size:22px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+a{
+    color:chartreuse;
+    text-decoration: none;
+}
+a:hover{
+   color:blueviolet; 
+}
+</style>
+
+<body>
+    <div class="header">
+        <div class="head"><video class="logo"
+                src="https://media.istockphoto.com/id/1302198546/video/footage-of-wooden-gavel-and-scale-usually-use-for-law-and-justice.mp4?s=mp4-480x480-is&k=20&c=0ATE5R1fl-M_BtuYDpQ0Yj2-AsLi8BlVXI4vcFRF3eI="
+                muted autoplay loop></video>
+            <div></div>
+            <div class="option1">
+                <div class="animation" onmouseover="widthincrease(1)" onmouseout="widthRemove(1)"> <a href="/complain">Home</a><div class="animation-1"></div></div>
+                <div class="animation" onmouseover="widthincrease(2)" onmouseout="widthRemove(2)"><a href="/complain/about" >About</a><div class="animation-1"></div></div>
+                <div  class="animation" onmouseover="widthincrease(3)" onmouseout="widthRemove(3)"><a href="/complain/contact" >Contact</a><div class="animation-1"></div></div>
+
+            </div><div class="option2">
+               <button class="dropdown" onclick="dropdown()">Home</button>
+               <li>
+                <ul><a href="">Home</a></ul>
+                <ul><a href="">About</a></ul>
+                <ul><a href="">Contact</a></ul>
+                </li>
+            </div>
+        </div>
+        <div class="text-section">
+            <p id="text">Complain Register</p>
+        </div>
+        <video class="font-view-video"
+            src="https://media.gettyimages.com/id/1346922781/video/manager-is-blaming-colleague-at-the-office.mp4?s=mp4-640x640-gi&k=20&c=4UzA65lw4jSNfICGMnzL8Wn6OCXn4ynxTj0_vJzMup4="
+            muted autoplay loop></video>
+        <div class="complain-section" onmouseover="background(this)">
+            
+            <div class="complain"> 
+                <img class="complain-img"
+                    src="https://st3.depositphotos.com/1334572/15118/v/950/depositphotos_151188154-stock-illustration-murderer-red-stamp.jpg">
+                <div class="discription"></div><button class="complain-button"><a href="/contact">Complain</a></button>
+            </div>
+            <div class="complain"> <img class="complain-img"
+                    src="https://tse4.mm.bing.net/th?id=OIP.HrxOpjMJu6LHHeP6sl5kDwHaFj&pid=Api&P=0&h=180">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img"
+                    src="https://tse3.mm.bing.net/th?id=OIP.6VuBfEM0xmaJ2Izbf_ajsQHaHa&pid=Api&P=0&h=180">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img"
+                    src="https://tse1.mm.bing.net/th?id=OIP.pnTJSx2L8ZYYuFV4Di2HEAHaD4&pid=Api&P=0&h=180">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+                <div class="discription"></div><button class="complain-button"></button>
+            </div>
+            <div class="complain"> <img class="complain-img" src="">
+            <div class="discription"></div><button class="complain-button"></button>
+            </div>
+        </div>
+        <div class="conclution-section" onmouseover="background(this)">
+               <h1>Result</h1>
+            <h3>Total Complain Register:300</h3>
+               <h3>Talal Complain Solve:30</h3>
+               <div><a href="/complain/result-bb"><button class="show-all-complain">Show All Complain</button></a></div>
+               <div><button class="show-all" onclick="change()">Change Color</button></div>
+        </div>
+    </div>
+    <script>
+        function dropdown(){
+            if(document.getElementsByTagName('li')[0].style.display==='none')
+            document.getElementsByTagName('li')[0].style.display='block';
+            else
+            document.getElementsByTagName('li')[0].style.display='none';
+        }
+        var j=0;
+        var set1;
+        var cnt1=0;
+        var arr3=["Complain Resister","Rape Cases","Murder Case"]
+        var arr=['https://media.gettyimages.com/id/1346922781/video/manager-is-blaming-colleague-at-the-office.mp4?s=mp4-640x640-gi&k=20&c=4UzA65lw4jSNfICGMnzL8Wn6OCXn4ynxTj0_vJzMup4=','https://media.gettyimages.com/id/1266549505/video/murderer-male-hand-with-a-big-knife-close-up.mp4?s=mp4-640x640-gi&k=20&c=9WXvvPE2nsJrpSSey4P24ILG7tduWq0htnwh1Z_7Bu4=','https://media.gettyimages.com/id/1051222918/video/gangster-buying-a-weapon.mp4?s=mp4-480x480-gi&k=20&c=aoDdYjnPyI_XeR129jHbZdCKTBERIcdJxeDuqyFIBUk='];
+        setInterval(()=>{
+            j++;
+       document.getElementsByClassName('font-view-video')[0].src=arr[j%arr.length];
+      // document.getElementById('text').innerHTML=arr3[j%arr3.length];
+       var k=0;
+       var f=1;
+       var str=arr3[j%arr3.length];
+       if(cnt1>0)
+       {
+        cnt1=0;
+      clearInterval(set1);
+       }
+      cnt1++;
+       set1=setInterval(()=>{
+        
+       if(k<=arr3[j%arr3.length].length&&k>=0)
+        {  
+            document.getElementById('text').innerHTML=arr3[j%arr3.length].slice(0,k)+'|';
+            document.getElementById('text').style.color=`rgb(`+`${128*Math.random()},`+`${229*Math.random()},`+`${229*Math.random()})`;
+            if(f)
+            k++;
+            else
+            k--;
+        
+       }
+          else
+          {
+            if(f)
+            k--;
+            else
+            k++;
+            f=!f;
+        
+          }
+       },400);
+        },10000);
+        var chang=0;
+        function change(){
+            chang=!chang;
+        }
+        function background(x){
+            if(chang==0)
+            {
+            x.style.backgroundColor=`rgb(`+`${128*Math.random()},`+`${229*Math.random()},`+`${229*Math.random()})`;
+           var coml=document.getElementsByClassName('complain');
+           for(let i=0;i<document.getElementsByClassName('complain').length;i++)
+           {
+        
+            document.getElementsByClassName('complain')[i].style.boxShadow=`3px 2px rgb(`+`${128*Math.random()/2},`+`${229*Math.random()/2},`+`${229*Math.random()})`;
+           }
+        }
+        
+        }
+        var arr2=[50,50,60];
+        var cnt=0;
+        var set;
+        function widthincrease(y){
+            var l=0;
+            cnt++;
+           set=setInterval(()=>{
+                if(l<arr2[y-1]&&cnt==1)
+                {
+                    l+=0.3;
+
+            document.getElementsByClassName('animation-1')[y-1].style.width=`${l}px`;
+                }
+                else
+                {
+                   // clearInterval(set);
+                }
+            },10);
+        }
+       function widthRemove(y){
+        cnt--;
+        clearInterval(set);
+        document.getElementsByClassName('animation-1')[y-1].style.width=`0px`;
+        
+        }
+    </script>
+</body>
+
+</html>
